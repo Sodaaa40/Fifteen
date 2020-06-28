@@ -1,7 +1,7 @@
 .PHONY:clean
 CXX=g++
 OBJ=./build/src/fifteen.o 
-SFMLIB= -Ithirdparty/SFMLlib\include -Lthirdparty/SFMLlib\lib
+SFMLIB= -Ithirdparty/SFMLlib/include -Lthirdparty/SFMLlib/lib
 WWFLAGS=-Wall -Werror
 STD=-std=c++17
 SFM=-lsfml-graphics -lsfml-window -lsfml-system

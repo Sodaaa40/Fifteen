@@ -9,7 +9,7 @@ SFM=-lsfml-graphics -lsfml-window -lsfml-system
 all:fifteen
 
 fifteen: $(OBJ)
-	g++ $(WWFLAGS) $(OBJ) -o ./bin/god $(SFMIB) $(SFM)
+	g++ $(WWFLAGS) $(OBJ) -o ./bin/fifteen $(SFMIB) $(SFM)
 
 ./build/src/fifteen.o: ./src/main.cpp
 	g++ $(WWFLAGS) -c ./src/main.cpp -o ./build/src/fifteen.o $(SFMLIB)

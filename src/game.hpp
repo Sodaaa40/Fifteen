@@ -6,9 +6,9 @@ private:
 public:
 	game(){
 		for(int i = 0; i < 16; i++){
-			field[i] = i;
+			field[i] = i + 1;
 		}
 	}
 
-	int getFieldCell(int x, int y){ return field[4 * y + x]}	
+	int getFieldCell(int x, int y){ return field[4 * y + x]; }	
 };

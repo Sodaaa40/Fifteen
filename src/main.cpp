@@ -8,7 +8,7 @@ int main()
 
     Texture texture;
     Texture menu;
-    texture.loadFromFile("./bin/images/15.png");
+    texture.loadFromFile("./images/15.png");
 
     int blocksize = 64;
     game fifteen;
@@ -58,7 +58,7 @@ int main()
 
         if (fifteen.checkWin() == 0) {
             RenderWindow subwindow(VideoMode(490, 167), "menu");
-            menu.loadFromFile("./bin/images/re.png");
+            menu.loadFromFile("./images/re.png");
             Sprite menusprite(menu);
             subwindow.clear(Color::White);
             subwindow.draw(menusprite);

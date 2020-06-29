@@ -51,6 +51,17 @@ public:
 	int getFieldCell(int x, int y) {
 		return field[4 * y + x]; 
 	}	
+	int checkWin() {
+	int flag = 1;
+	for(int i = 0; i<16; i++) {
+		if(field[i] != ( i + 1)) flag = 0;
+	}	
+	if(flag == 1) {
+		return 0;
+	} else {
+		return 1;
+	}
+	}
 
 	void shuffle() {
 	int n;

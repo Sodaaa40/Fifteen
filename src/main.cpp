@@ -29,6 +29,10 @@ int main()
 	while (window.isOpen())
 	{
 
+		if(fifteen.checkWin() == 0){
+			return 0;
+		}
+
 		Event event;
 		while (window.pollEvent(event))
 		{

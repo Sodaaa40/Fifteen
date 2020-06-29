@@ -12,7 +12,7 @@ int main()
 
     int blocksize = 64;
     game fifteen;
-    // fifteen.shuffle();
+    fifteen.shuffle();
     Sprite sprite[16];
 
     int n = 0;

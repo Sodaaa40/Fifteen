@@ -15,10 +15,10 @@ fifteen: $(OBJ)
 	g++ $(WWFLAGS) -c ./src/main.cpp -o ./build/src/fifteen.o $(SFMLIB)
 
 fifteen-test: ./build/test/test.o
-	g++ $(WWFLAGS) build/test/test.o -o bin/fifteen-test
+	g++ $(STD) $(WWFLAGS) build/test/test.o -o bin/fifteen-test
 
 build/test/test.o: test/test.cpp
-	g++ $(WWFLAGS) -c test/test.cpp -o build/test/test.o
+	g++ $(STD) $(WWFLAGS) -c test/test.cpp -o build/test/test.o
 
 clean:
 	rm -rf ./build/src/*.o ./build/test/*.o

@@ -3,7 +3,7 @@ branches:
   only:
   - master
   - develop
-  - travis
+  - test
 
 language: cpp
 compiler: gcc

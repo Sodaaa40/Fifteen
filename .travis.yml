@@ -12,4 +12,4 @@ sudo: required
 install:
   - sudo apt-get update
   - sudo apt-get install libsfml-dev
-script: make && git ls-files src/ | xargs clang-format -i && git diff --exit-code
+script: make && git ls-files src/ | xargs clang-format -i && git diff --exit-code && ./bin/test

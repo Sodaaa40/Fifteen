@@ -6,7 +6,7 @@ WWFLAGS=-Wall -Werror
 STD=-std=c++17
 SFM=-lsfml-graphics -lsfml-window -lsfml-system
 
-all:fifteen
+all:fifteen test
 
 fifteen: $(OBJ)
 	g++ $(WWFLAGS) $(OBJ) -o ./bin/fifteen $(SFMIB) $(SFM)
@@ -14,8 +14,8 @@ fifteen: $(OBJ)
 ./build/src/fifteen.o: ./src/main.cpp
 	g++ $(WWFLAGS) -c ./src/main.cpp -o ./build/src/fifteen.o $(SFMLIB)
 
-test: ./build/test/test.o
-	g++ $(WWFLAGS) build/test/test.o -o bin/test
+fifteen-test: ./build/test/test.o
+	g++ $(WWFLAGS) build/test/test.o -o bin/fifteen-test
 
 build/test/test.o: test/test.cpp
 	g++ $(WWFLAGS) -c test/test.cpp -o build/test/test.o

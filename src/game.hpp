@@ -24,6 +24,24 @@ private:
 	return 0;
 }
 public:
+	int move(int num){
+	int pos;
+	int pos1;
+
+	for(int i = 0; i<16; i++) {
+		if(field[i] == 16) {
+			pos = i;
+		}	
+		if(field[i] ==num)
+			pos1 = i;
+	}
+	if(check(pos,pos1) == 1) {
+		swap(pos,pos1);
+		return 0;
+	} else {
+	return 1;
+	}
+}
 	game(){
 		for(int i = 0; i < 16; i++){
 			field[i] = i + 1;

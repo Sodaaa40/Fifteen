@@ -40,10 +40,15 @@ int main()
 			if (event.type == Event::MouseButtonPressed)
 			{
 
-				/*if (event.mouseButton.button == Mouse::Left)
+				if (event.mouseButton.button == Mouse::Left)
 				{
-					//MOVING NUMBERS
-				}*/
+					Vector2i position = Mouse::getPosition(window);
+
+					int vert = position.x / blocksize;
+					int hor = position.y / blocksize;
+
+					fifteen.move(fifteen.getFieldCell(hor, vert));
+				}
 					
 			}
 				

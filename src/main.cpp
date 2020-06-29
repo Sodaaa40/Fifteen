@@ -7,11 +7,12 @@ int main()
 	RenderWindow window(VideoMode(256, 256), "simple 15-puzzle game");
 
 	Texture texture;
+	Texture menu;
 	texture.loadFromFile("./bin/images/15.png");
 
 	int blocksize = 64;
 	game fifteen;
-	fifteen.shuffle();
+	//fifteen.shuffle();
 	Sprite sprite[16];
 
 
@@ -29,7 +30,9 @@ int main()
 	while (window.isOpen())
 	{
 
+
 		Event event;
+
 		while (window.pollEvent(event))
 		{
 
@@ -70,6 +73,31 @@ int main()
 
 
 		window.display();
+		
+		if(fifteen.checkWin() == 0){
+			RenderWindow subwindow(VideoMode(490, 167), "menu");
+			menu.loadFromFile("./bin/images/re.png");
+			Sprite menusprite(menu);
+			subwindow.clear(Color::White);
+			subwindow.draw(menusprite);
+			subwindow.display();
+			while(fifteen.checkWin() == 0){
+			if(subwindow.waitEvent(event)){
+				if(event.type == Event::MouseButtonPressed){
+					if(event.mouseButton.button == Mouse::Left){
+						Vector2i position = Mouse::getPosition(subwindow);
+						int hor = position.y;
+						if(hor > 83){
+							return 0;
+						}else{
+							fifteen.shuffle();
+							subwindow.close();
+						}
+					}
+				}
+			}
+		}
+		}
 
 	}
 	

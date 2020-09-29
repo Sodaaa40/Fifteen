@@ -32,6 +32,30 @@ private:
             return 1;
         return 0;
     }
+    int checkfield()
+    {
+        int indicator = 0;
+
+        for (int i = 1; i < 17; i++) {
+            for (int j = 0; j < 16; j++) {
+                if (field[j] == i) {
+                    indicator++;
+                }
+            }
+            if (indicator != 1) {
+                return 1;
+            }
+            indicator = 0;
+        }
+        return 0;
+    }
+
+    void setfielddefault()
+    {
+        for (int i = 0; i < 16; i++) {
+            field[i] = i + 1;
+        }
+    }
 
 public:
     int move(int num)
@@ -100,6 +124,12 @@ public:
             if (n == 3) {
                 if (swapmove(spacepos, spacepos + 4) == 0)
                     spacepos = spacepos + 4;
+            }
+            if (i == 99) {
+                if (checkfield() == 1) {
+                    i = 0;
+                    setfielddefault();
+                }
             }
         }
     }
